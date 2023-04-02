@@ -1209,7 +1209,7 @@ i {
   width: 150px;
   height: 150px;
   /* border-radius:50%; */
-  background-image: url("../rocket.gif");
+  background-image: url("../images/rocket.gif");
   background-size: cover;
 
   left: 0;
