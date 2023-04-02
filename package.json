@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "midjourney-client": "^1.0.8"
+  }
+}

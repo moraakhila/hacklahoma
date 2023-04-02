@@ -18,81 +18,133 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap"
+      rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body>
-    <body style="background-color: black">
-      <div class="bg-animation">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div id="stars4"></div>
-      </div>
-      <i></i>
-      <div class="container">
-        <h1 style="font-family: 'Poller One', cursive;color: orange;font-style: italic;">Star Wars</h1>
-        <div class="options">
-          <h2 style="font-family: 'Poller One', cursive;color: orange;font-style: italic;">Select a Star Wars character:</h2>
-          <div class="character-options">
-            <button class="character-option" data-character="luke-skywalker">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Luke-Skywalker-01.256.png" alt="Luke Skywalker">
-            </button>
-            <button class="character-option" data-character="leia-organa">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Leia.256.png" alt="Leia Organa">
-            </button>
-            <button class="character-option" data-character="han-solo">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Han-Solo-01.256.png" alt="Han Solo">
-            </button>
-            <button class="character-option" data-character="chewbacca">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Chewbacca.256.png" alt="Chewbacca">
-            </button>
-            <button class="character-option" data-character="c-3po">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-C3PO.256.png" alt="C-3PO">
-            </button>
-            <button class="character-option" data-character="r2-d2">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-R2D2-01.256.png" alt="R2-D2">
-            </button>
-            <button class="character-option" data-character="yoda">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Yoda-01.256.png" alt="Yoda">
-            </button>
-            <button class="character-option" data-character="darth-vader">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Vader-03.256.png" alt="Darth Vader">
-            </button>
-            <button class="character-option" data-character="stormtrooper">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Stormtrooper-01.256.png" alt="Stormtrooper">
-            </button>
-            <button class="character-option" data-character="bobba-fett">
-              <img src="images/Jonathan-Rey-Star-Wars-Characters-Boba-Fett.256.png" alt="Bobba Fett">
-            </button>
-          </div>
-        </div>
-        
-          <div class="col-12">
-            <button type="button" class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        
 
-        <!-- <div class="result">
+  <body style="background-color: black">
+    <i id="rocket"></i>
+    <div class="container" style="margin-top: 10%">
+      <h1
+        style="
+          font-family: 'Poller One', cursive;
+          color: orange;
+          font-style: italic;
+        ">
+        Star Wars
+      </h1>
+      <div class="options">
+        <h2
+          style="
+            font-family: 'Poller One', cursive;
+            color: orange;
+            font-style: italic;
+          ">
+          Select a Star Wars character:
+        </h2>
+        <div class="character-options">
+          <button class="character-option" data-character="luke-skywalker">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Luke-Skywalker-01.256.png"
+              alt="Luke Skywalker" />
+          </button>
+          <button class="character-option" data-character="leia-organa">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Leia.256.png"
+              alt="Leia Organa" />
+          </button>
+          <button class="character-option" data-character="han-solo">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Han-Solo-01.256.png"
+              alt="Han Solo" />
+          </button>
+          <button class="character-option" data-character="chewbacca">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Chewbacca.256.png"
+              alt="Chewbacca" />
+          </button>
+          <button class="character-option" data-character="c-3po">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-C3PO.256.png"
+              alt="C-3PO" />
+          </button>
+          <button class="character-option" data-character="r2-d2">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-R2D2-01.256.png"
+              alt="R2-D2" />
+          </button>
+          <button class="character-option" data-character="yoda">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Yoda-01.256.png"
+              alt="Yoda" />
+          </button>
+          <button class="character-option" data-character="darth-vader">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Vader-03.256.png"
+              alt="Darth Vader" />
+          </button>
+          <button class="character-option" data-character="stormtrooper">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Stormtrooper-01.256.png"
+              alt="Stormtrooper" />
+          </button>
+          <button class="character-option" data-character="bobba-fett">
+            <img
+              src="images/Jonathan-Rey-Star-Wars-Characters-Boba-Fett.256.png"
+              alt="Bobba Fett" />
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12" style="margin-top: 1%; padding: 5%">
+        <button
+          type="button"
+          id="submit-button"
+          class="btn btn-primary"
+          type="submit">
+          Submit form
+        </button>
+      </div>
+
+      <!-- <div class="result">
           <h2>Result:</h2>
           <img id="result-image">
         </div> -->
-      </div>
+    </div>
+    <div class="bg-animation">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="stars4"></div>
+    </div>
 
-      <!-- <div class="success_avatar">
-        <center>
-          <h2 style="font-family: 'Poller One', cursive;color: orange;font-style: italic;">Hurray! Here is your Avatar.</h2>
-          <button class="character-option" data-character="c-3po">
-            <img src="images/Jonathan-Rey-Star-Wars-Characters-C3PO.256.png" alt="C-3PO">
-          </button>
-          <button>Let's Play Trivia!</button>&nbsp;&nbsp;&nbsp;
-          <button>Let's get Motivated!</button>
-        </center>
-      </div> -->
-        
-    </body>
+    <div class="success_avatar" style="display: none">
+      <center style="margin: 15%">
+        <h2
+          style="
+            font-family: 'Poller One', cursive;
+            color: orange;
+            font-style: italic;
+          ">
+          Hurray! Here is your Avatar.
+        </h2>
+        <button
+          class="character-option"
+          data-character="c-3po"
+          style="margin-top: 4%; margin-bottom: 4%">
+          <img
+            src="images/Jonathan-Rey-Star-Wars-Characters-C3PO.256.png"
+            alt="C-3PO" />
+        </button>
+        <button class="btn btn-primary bg-info">Let's Play Trivia!</button
+        >&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary bg-success">Let's get Motivated!</button>
+      </center>
+    </div>
 
     <script type="text/javascript" src="./js/vanilatilt.js"></script>
     <!-- MDB -->
@@ -106,20 +158,20 @@
 
     <script src="./js/script.js"></script>
 
-    <!-- <script>
-      const page33 = document.querySelector(".page3");
+    <script>
+      const page33 = document.querySelector(".container");
       const success_avatarr = document.querySelector(".success_avatar");
       const submit_button11 = document.querySelector("#submit-button");
 
       submit_button11.addEventListener("click", function (event) {
         event.preventDefault();
-        page33.style.display = "none"
+        page33.style.display = "none";
         success_avatarr.style.display = "block";
       });
-    </script> -->
+    </script>
 
     <script>
-      let elem = document.querySelector("i");
+      let elem = document.querySelector("#rocket");
       let start;
 
       function debug(timestamp) {

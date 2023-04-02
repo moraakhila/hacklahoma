@@ -1204,7 +1204,7 @@
   }
 }
 
-i {
+#rocket {
   position: fixed;
   width: 150px;
   height: 150px;
@@ -1215,7 +1215,7 @@ i {
   left: 0;
   top: 50%;
 }
-i.start {
+#rocket.start {
   animation: x 10s linear infinite,
     y 2s infinite cubic-bezier(0.5, 600, 0.5, -600);
 }
