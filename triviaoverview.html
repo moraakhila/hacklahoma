@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/trivisstyle1.css" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet" />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap"
+      rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <div class="bg-animation">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="stars4"></div>
+    </div>
+    <i id="rocket"></i>
+    <div>
+      <center>
+        <h4
+          style="
+            font-family: 'Poller One', cursive;
+            color: orange;
+            font-style: italic;
+            margin-top: 4%;
+          ">
+          Let's play Trivia!!!
+        </h4>
+      </center>
+    </div>
+    <center>
+      <div class="input-group1">
+        <div class="form-outline" style="position: relative; width: 40%">
+          <input
+            id="search-input"
+            type="search"
+            id="form1"
+            class="form-control" />
+          <label class="form-label" for="form1" style="color: aliceblue"
+            >Search your favourite character</label
+          >
+        </div>
+        <button
+          id="search-button"
+          type="button"
+          class="btn btn-primary"
+          style="align-items: center">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </center>
+    <div class="holder">
+      <div class="card cardone" style="width: 18rem; margin-right: 100px">
+        <img
+          class="card-img-top"
+          src="./images/luke.gif"
+          alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">Luke Skywalker</h5>
+          <p class="card-text">
+            He is a prominent Jedi Knight and one of the main protagonists of
+            the original trilogy.
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="window.location.href='lukequiz.html'"
+            >Play</a
+          >
+        </div>
+      </div>
+      <div class="card cardtwo" style="width: 18rem; margin-right: 100px">
+        <img
+          class="card-img-top"
+          src="./images/c3po.gif"
+          alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">C-3PO</h5>
+          <p class="card-text">
+            He is known for his gold-plated exterior, fluent language skills,
+            and nervous demeanor.
+          </p>
+          <a href="#" class="btn btn-primary">Play</a>
+        </div>
+      </div>
+      <div class="card cardthree" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="./images/boba fett.gif"
+          alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">Boba Fett</h5>
+          <p class="card-text">
+            He is a notorious bounty hunter in the Star Wars universe, known for
+            his distinctive armor and helmet.
+          </p>
+          <a href="#" class="btn btn-primary">Play</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./js/vanilatilt.js"></script>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+    <script>
+      let elem = document.querySelector("#rocket");
+      let start;
+
+      function debug(timestamp) {
+        if (start === undefined) start = timestamp;
+        const elapsed = timestamp - start;
+        let rect = elem.getBoundingClientRect();
+        document.body.insertAdjacentHTML(
+          "beforeBegin",
+          '<d style="top:' +
+            (rect.y + rect.height / 2) +
+            "px;left:" +
+            (rect.x + rect.width / 2) +
+            'px;"></d>'
+        );
+
+        if (elapsed < 20000) {
+          //window.requestAnimationFrame(debug);
+        }
+      }
+
+      elem.classList.add("start");
+      window.requestAnimationFrame(debug);
+    </script>
+    <script>
+      // Get the search input element and the card elements
+      const searchInput = document.getElementById("search-input");
+      const cardElements = document.getElementsByClassName("card");
+
+      // Add an event listener to the search input element
+      searchInput.addEventListener("keyup", function () {
+        const searchQuery = searchInput.value.toLowerCase();
+        // Loop through the card elements
+        for (let i = 0; i < cardElements.length; i++) {
+          const cardTitle = cardElements[i]
+            .getElementsByTagName("h5")[0]
+            .textContent.toLowerCase();
+          // Check if the card title contains the search query
+          if (cardTitle.includes(searchQuery)) {
+            // Show the card if it matches the search query
+            cardElements[i].style.display = "block";
+          } else {
+            // Hide the card if it does not match the search query
+            cardElements[i].style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -12,6 +12,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1000;
 }
 
 .bg-animation {
@@ -1214,6 +1215,7 @@
 
   left: 0;
   top: 50%;
+  z-index: -20;
 }
 #rocket.start {
   animation: x 10s linear infinite,
@@ -12169,3 +12171,4 @@ textarea.form-control {
   background: #fbceb5;
   color: #fff;
 }
+
