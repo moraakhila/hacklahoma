@@ -1,5 +1,6 @@
 //selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
+const ele = document.querySelector("#start_btnn");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
@@ -13,6 +14,11 @@ const timeCount = document.querySelector(".timer .timer_sec");
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
+    
+        console.log("sddssdsd");
+        ele.style.display = "none";
+    
+    
 }
 
 // if exitQuiz button clicked
@@ -195,11 +201,11 @@ function startTimer(time){
 }
 
 function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
+    counterLine = setInterval(timer, 10);
     function timer(){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
+        if(time > 1400){ //if time value is greater than 549
             clearInterval(counterLine); //clear counterLine
         }
     }

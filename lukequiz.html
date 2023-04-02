@@ -41,14 +41,23 @@
             font-family: 'Poller One', cursive;
             color: orange;
             font-style: italic;
-            margin-top: 4%;
+            margin-top: 2%;
           ">
           Let's play Trivia!!!
         </h4>
       </center>
     </div>
     <!-- start Quiz button -->
-    <div class="start_btn"><button>Start Quiz</button></div>
+    <div
+      class="start_btn"
+      id="start_btnn"
+      style="
+        font-family: 'Poller One', cursive;
+        color: orange;
+        font-style: italic;
+      ">
+      <button id="startquizz" onclick="hidestartbtn();">Start Quiz</button>
+    </div>
     <!-- Info Box -->
     <div class="info_box">
       <div class="info-title"><span>Some Rules of this Quiz</span></div>
@@ -77,27 +86,53 @@
     <!-- Quiz Box -->
     <div class="quiz_box">
       <header>
-        <div class="title">Awesome Quiz Application</div>
+        <img
+          src="images/Jonathan-Rey-Star-Wars-Characters-C3PO.256.png"
+          alt="C-3PO"
+          style="width: 150px; height: 150px; margin-bottom: 4%" />
+        <div
+          class="title"
+          style="
+            font-family: 'Poller One', cursive;
+            color: greenyellow;
+            font-style: italic;
+          ">
+          Luke Skywalker Quiz
+        </div>
         <div class="timer">
           <div class="time_left_txt">Time Left</div>
           <div class="timer_sec">15</div>
         </div>
         <div class="time_line"></div>
       </header>
-      <section>
-        <div class="que_text">
-          <!-- Here I've inserted question from JavaScript -->
-        </div>
-        <div class="option_list">
-          <!-- Here I've inserted options from JavaScript -->
-        </div>
-      </section>
+      <center>
+        <section>
+          <div
+            class="que_text"
+            style="
+              font-family: 'Poller One', cursive;
+              color: orange;
+              font-style: italic;
+            ">
+            <!-- Here I've inserted question from JavaScript -->
+          </div>
+          <div class="option_list">
+            <!-- Here I've inserted options from JavaScript -->
+          </div>
+        </section>
+      </center>
       <!-- footer of Quiz Box -->
       <footer>
-        <div class="total_que">
+        <div
+          class="total_que"
+          style="
+            font-family: 'Poller One', cursive;
+            color: grey;
+            font-style: italic;
+          ">
           <!-- Here I've inserted Question Count Number from JavaScript -->
         </div>
-        <button class="next_btn">Next Que</button>
+        <button class="next_btn">NEXT</button>
       </footer>
     </div>
     <!-- Result Box -->
@@ -149,29 +184,13 @@
       elem.classList.add("start");
       window.requestAnimationFrame(debug);
     </script>
-    <script>
-      // Get the search input element and the card elements
-      const searchInput = document.getElementById("search-input");
-      const cardElements = document.getElementsByClassName("card");
 
-      // Add an event listener to the search input element
-      searchInput.addEventListener("keyup", function () {
-        const searchQuery = searchInput.value.toLowerCase();
-        // Loop through the card elements
-        for (let i = 0; i < cardElements.length; i++) {
-          const cardTitle = cardElements[i]
-            .getElementsByTagName("h5")[0]
-            .textContent.toLowerCase();
-          // Check if the card title contains the search query
-          if (cardTitle.includes(searchQuery)) {
-            // Show the card if it matches the search query
-            cardElements[i].style.display = "block";
-          } else {
-            // Hide the card if it does not match the search query
-            cardElements[i].style.display = "none";
-          }
-        }
-      });
+    <script>
+      function hidestartbtn() {
+        const ele = document.getElementsById("start_btnn");
+        console.log("sddssdsd");
+        ele.style.display = "none";
+      }
     </script>
   </body>
 </html>
