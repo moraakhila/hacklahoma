@@ -2,57 +2,57 @@
 let questions = [
     {
     numb: 1,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
+    question: "Who played the role of Luke Skywalker in the original Star Wars trilogy? ",
+    answer: "Mark Hamill",
     options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language"
+      "Anthony Daniels",
+      "Peter Mayhew",
+      "Andy Serkis",
+      "Mark Hamill"
     ]
   },
     {
     numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
+    question: "In which Star Wars film did Luke Skywalker lose his right hand? ",
+    answer: "The Empire Strikes Back",
     options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
+      "A New Hope",
+      "The Empire Strikes Back",
+      "Return of the Jedi",
+      "Attack of the Clones"
     ]
   },
     {
     numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: "Which planet did Luke Skywalker grow up on? ",
+    answer: "Tatooine",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
+      "Coruscant",
+      "Hoth",
+      "Tatooine",
+      "Kamino"
     ]
   },
     {
     numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
+    question: "What was Luke Skywalker's call sign during the attack on the Death Star? ",
+    answer: "Red Five",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "Red Two",
+      "Red Five",
+      "Red Leader",
+      "Red star"
     ]
   },
     {
     numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    question: "What is the name of Luke Skywalker's father? ",
+    answer: "Darth Vader",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "Han Solo",
+      "Obi-Wan Kenobi",
+      "Darth Vader",
+      "Anakin Skywalker"
     ]
   },
   // you can uncomment the below codes and make duplicate as more as you want to add question

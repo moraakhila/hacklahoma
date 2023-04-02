@@ -25,6 +25,25 @@
       rel="stylesheet" />
 
     <title>Document</title>
+    <style>
+      /* Style the profile icon */
+      .profile-icon {
+        color: #aaa;
+        float: right;
+        font-size: 52px;
+        font-weight: bold;
+        margin-right: 2%;
+        margin-top: 2%;
+      }
+
+      /* Change the color of the profile icon on hover */
+      .profile-icon:hover,
+      .profile-icon:focus {
+        color: rgb(234, 140, 9);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body style="background-color: black">
     <div class="bg-animation">
@@ -34,6 +53,12 @@
       <div id="stars4"></div>
     </div>
     <i id="rocket"></i>
+    <div class="modal2">
+      <div class="modal-content2">
+        <span class="profile-icon"><i class="fas fa-user-circle"></i></span>
+      </div>
+    </div>
+
     <div>
       <center>
         <h4
@@ -41,7 +66,7 @@
             font-family: 'Poller One', cursive;
             color: orange;
             font-style: italic;
-            margin-top: 4%;
+            margin-top: 2%;
           ">
           Let's play Trivia!!!
         </h4>
@@ -99,7 +124,12 @@
             He is known for his gold-plated exterior, fluent language skills,
             and nervous demeanor.
           </p>
-          <a href="#" class="btn btn-primary">Play</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="window.location.href='c3po.html'"
+            >Play</a
+          >
         </div>
       </div>
       <div class="card cardthree" style="width: 18rem">
@@ -113,7 +143,12 @@
             He is a notorious bounty hunter in the Star Wars universe, known for
             his distinctive armor and helmet.
           </p>
-          <a href="#" class="btn btn-primary">Play</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="window.location.href='bobaquiz.html'"
+            >Play</a
+          >
         </div>
       </div>
     </div>
@@ -171,6 +206,15 @@
           }
         }
       });
+    </script>
+
+    <script>
+      document
+        .querySelector(".profile-icon")
+        .addEventListener("click", function () {
+          document.querySelector(".modal2").style.display = "none";
+          window.location.href = "home.html";
+        });
     </script>
   </body>
 </html>
