@@ -42,6 +42,9 @@
                         type="text"
                         class="form-control"
                         placeholder="Username"
+                        id="loginusername"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         required />
                     </div>
                     <div class="form-group">
@@ -49,6 +52,8 @@
                         id="password-field"
                         type="password"
                         class="form-control"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         placeholder="Password"
                         required />
                       <span
@@ -59,7 +64,7 @@
                       <button
                         type="submit"
                         class="form-control btn btn-primary submit px-3"
-                        onclick="window.location.href='home.html'">
+                        onclick="loginverify();">
                         Sign In
                       </button>
                     </div>
@@ -90,7 +95,7 @@
       <div class="signup" style="display: none">
         <section class="ftco-section">
           <div class="container" style="width: 60%; margin-top: 5.7%">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="color: black">
               <div class="col-md-6 col-lg-4">
                 <div class="login-wrap p-0">
                   <h3 class="mb-4 text-center">Have an account?</h3>
@@ -98,43 +103,54 @@
                     <div class="form-group">
                       <input
                         type="text"
+                        id="signusername"
                         class="form-control"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         placeholder="Username"
                         required />
                     </div>
                     <div class="form-group">
                       <input
                         type="text"
+                        id="signemail"
                         class="form-control"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         placeholder="Email"
                         required />
                     </div>
                     <div class="form-group">
                       <input
-                        id="password-fieldn"
+                        id="password-fields"
                         type="password"
                         class="form-control"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         placeholder="Password"
                         required />
                       <span
-                        toggle="#password-fieldn"
+                        toggle="#password-fields"
                         class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
                       <input
-                        id="password-vfield"
+                        id="password-vfields"
                         type="password"
                         class="form-control"
+                        onfocus="this.style.backgroundColor='black'"
+                        ;
                         placeholder="Re-enter Password"
                         required />
                       <span
-                        toggle="#password-vfield"
+                        toggle="#password-vfields"
                         class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
                       <button
                         type="submit"
-                        class="form-control btn btn-primary submit px-3">
+                        class="form-control btn btn-primary submit px-3"
+                        onclick="signupper();">
                         Sign Up
                       </button>
                     </div>
@@ -211,6 +227,107 @@
 
       elem.classList.add("start");
       window.requestAnimationFrame(debug);
+    </script>
+
+    <script>
+      function signupper() {
+        let un = $("#signusername").val().trim();
+        let em = $("#signemail").val().trim();
+        let ps = $("#password-fields").val().trim();
+
+        let parmsdata = {
+          username: un,
+          email: em,
+          password: ps,
+        };
+
+        let userinfo = JSON.stringify(parmsdata);
+
+        $.ajax({
+          url: "http://127.0.0.1:8000/usersignup",
+          contentType: "application/json",
+          dataType: "json",
+          type: "POST",
+          data: userinfo,
+          success: function (response) {
+            if (response[0].callStatus == "GOOD") {
+              //$("#hidUserId").val(un)
+              localStorage.setItem("username", un);
+              localStorage.setItem("password", ps);
+              localStorage.setItem("islogin", true);
+              console.log("login success");
+              console.log(response);
+            } else {
+              swal(
+                "Error!",
+                "Invalid user ID or password. Please try again.",
+                "error"
+              );
+              localStorage.setItem("islogin", false);
+              localStorage.setItem("username", "");
+              localStorage.setItem("password", "");
+            }
+          },
+          error: function (response) {
+            console.log("login failed");
+            console.log(response);
+            swal(
+              "Error!",
+              "Invalid email address or password. Please try again.",
+              "error"
+            );
+
+            localStorage.setItem("islogin", false);
+            localStorage.setItem("username", "");
+            localStorage.setItem("password", "");
+          },
+        });
+      }
+    </script>
+    <script>
+      function loginverify() {
+        let un = $("#loginusername").val().trim();
+        let ps = $("#password-field").val().trim();
+
+        let parmsdata = {
+          username: un,
+          password: ps,
+        };
+
+        let userinfo = JSON.stringify(parmsdata);
+        console.log(userinfo);
+        $.ajax({
+          url: "http://127.0.0.1:8000/usersignin",
+          contentType: "application/json",
+          dataType: "json",
+          type: "POST",
+          data: userinfo,
+          success: function (response) {
+            if (response[0].callStatus == "GOOD") {
+              //$("#hidUserId").val(un)
+              localStorage.setItem("username", un);
+              localStorage.setItem("password", ps);
+              localStorage.setItem("islogin", true);
+              window.location.href = "home.html";
+              console.log("login success");
+              console.log(response);
+            } else {
+              alert("Error! Invalid user ID or password. Please try again.");
+              localStorage.setItem("islogin", false);
+              localStorage.setItem("username", "");
+              localStorage.setItem("password", "");
+            }
+          },
+          error: function (response) {
+            console.log("login failed");
+            console.log(response);
+
+            localStorage.setItem("islogin", false);
+            localStorage.setItem("username", "");
+            localStorage.setItem("password", "");
+          },
+        });
+      }
     </script>
   </body>
 </html>

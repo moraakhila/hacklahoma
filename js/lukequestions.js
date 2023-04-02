@@ -53,9 +53,4 @@ let questions = [
   //   ]
   // },
 ];
-var contentDiv = document.getElementById("content");
-contentDiv.insertAdjacentHTML(
-  "beforeend",
 
-  "<h1>Hello, World!</h1>"
-);
