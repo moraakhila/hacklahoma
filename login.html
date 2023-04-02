@@ -8,15 +8,18 @@
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -28,13 +31,73 @@
         <div id="stars4"></div>
       </div>
       <i></i>
+      <section class="ftco-section">
+        <div class="container" style="width: 60%; margin-top: 5.7%">
+          <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+              <div class="login-wrap p-0">
+                <h3 class="mb-4 text-center">Have an account?</h3>
+                <form action="#" class="signin-form">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="password-field"
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                    <span
+                      toggle="#password-field"
+                      class="fa fa-fw fa-eye field-icon toggle-password"
+                    ></span>
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      class="form-control btn btn-primary submit px-3"
+                    >
+                      Sign In
+                    </button>
+                  </div>
+                  <div class="form-group d-md-flex">
+                    <div class="w-50">
+                      <label class="checkbox-wrap checkbox-primary"
+                        >Remember Me
+                        <input type="checkbox" checked />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="w-50 text-md-right">
+                      <a href="#" style="color: #fff">Forgot Password</a>
+                    </div>
+                  </div>
+                  <div class="w-full text-center p-t-55">
+                    <span class="txt2"> Not a member? </span>
+
+                    <a href="" class="txt2 bo1"> Sign up now </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </body>
 
     <script type="text/javascript" src="./js/vanilatilt.js"></script>
     <!-- MDB -->
     <script
       type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+    ></script>
     <script>
       let elem = document.querySelector("i");
       let start;
